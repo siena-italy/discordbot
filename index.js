@@ -42,6 +42,11 @@ client.on("message", msg => {
   if (msg.content === "=quote") {
     msg.reply(quotes[Math.floor(Math.random() * quotes.length)])
   }
+  //steve quoter 1000
+  if (msg.content === "=quotes") {
+    msg.reply(quotes)
+  }
+
   if (msg.content === "=help") {
     sleep(200)
     msg.reply("Hi, I'm Steve the bot (not to be confused with Steve the human) and I'm here to moderate this server. If you have any questions, feel free to @Kaz and ask him (he is my developer). If you would like to contrubute, great! I am open source at https://github.com/KazMalhotra/discordbot.")
