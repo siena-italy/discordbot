@@ -59,6 +59,12 @@ client.on("message", msg => {
     msg.reply("Hi, I'm Steve")
   }
 
+  if (command === 'args') {
+    if (!args.length) {
+      return msg.channel.send("Please provide arguments", msg.author);
+    }
+    msg.channel.send(args);
+  }
 
 
 })
