@@ -31,28 +31,30 @@ var quotes = [
 
 //commands
 client.on("message", msg => {
-  let command = msg.content
-//  const args = msg.content.slice(prefix.length).split(' ');
-//  const command = args.shift().toLowerCase();
+//  let command = msg.content
 
-  //stop if '=' is not there or if the author of the message is a bot
-  if (!command.startsWith(prefix) || msg.author.bot) return;
+  if (!msg.content.startsWith(prefix) || msg.author.bot) return;
+  const args = msg.content.slice(prefix.length).split(' ');
+  const command = args.shift().toLowerCase();
+
+//  stop if '=' is not there or if the author of the message is a bot
+//  if (!command.startsWith(prefix) || msg.author.bot) return;
 
 
   //steve quoter 2000
-  if (command.startsWith(prefix + "quotes")) {
+  if (command.startsWith("quotes")) {
     msg.reply(quotes)
   }
 
-  if (command === (prefix + "quote")) {
+  if (command === ("quote")) {
     msg.reply(quotes[Math.floor(Math.random() * quotes.length)])
   }
 
-  if (command.startsWith(prefix + "help")) {
+  if (command.startsWith("help")) {
     msg.reply("Hi, I'm Steve the bot (not to be confused with Steve the human) and I'm here to moderate this server. If you have any questions, feel free to @Kaz and ask him (he is my developer). If you would like to contrubute, great! I am open source at https://github.com/KazMalhotra/discordbot.")
   }
 
-  if (command.startsWith(prefix + "lecture")) {
+  if (command.startsWith("lecture")) {
 
     msg.reply("Hi, I'm Steve")
   }
