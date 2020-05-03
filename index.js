@@ -39,25 +39,32 @@ let embed = new Discord.RichEmbed()
 
 //commands
 client.on("message", msg => {
+  let command = msg.content
 
+  
 
   // Exit and stop if it's not there
-  if (!msg.content.startsWith(prefix)) return;
+  if (!command.startsWith(prefix)) return;
 
   //steve quoter 2000
 
-  if (msg.content.startsWith(prefix + "quotes")) {
+  if (command.startsWith(prefix + "quotes")) {
     msg.reply(quotes)
   }
 
-  if (msg.content === (prefix + "quote")) {
+  if (command === (prefix + "quote")) {
     msg.reply(quotes[Math.floor(Math.random() * quotes.length)])
   }
 
-  if (msg.content.startsWith(prefix + "help")) {
+  if (command.startsWith(prefix + "help")) {
     msg.reply("Hi, I'm Steve the bot (not to be confused with Steve the human) and I'm here to moderate this server. If you have any questions, feel free to @Kaz and ask him (he is my developer). If you would like to contrubute, great! I am open source at https://github.com/KazMalhotra/discordbot.")
   }
 
+  if (command.startsWith(prefix + "lecture")) {
+
+    msg.reply("Hi, I'm Steve")
+
+  }
 
 /*
   //steve quoter 1000
