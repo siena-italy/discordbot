@@ -28,26 +28,18 @@ var quotes = [
   "I don't make up the rules, I just enforce them -Steven Michael Pape, making up the rules"
 ]
 
-/*
-let member = message.mentions.members.first() || message.member,
-  user = member.user;
-
-let embed = new Discord.RichEmbed()
-  .addField('Roles:', member.roles.map(r => `${r}`).join(' | '), true)
-*/
-
 
 //commands
 client.on("message", msg => {
   let command = msg.content
+//  const args = msg.content.slice(prefix.length).split(' ');
+//  const command = args.shift().toLowerCase();
 
-  
+  //stop if '=' is not there or if the author of the message is a bot
+  if (!command.startsWith(prefix) || msg.author.bot) return;
 
-  // Exit and stop if it's not there
-  if (!command.startsWith(prefix)) return;
 
   //steve quoter 2000
-
   if (command.startsWith(prefix + "quotes")) {
     msg.reply(quotes)
   }
@@ -63,23 +55,8 @@ client.on("message", msg => {
   if (command.startsWith(prefix + "lecture")) {
 
     msg.reply("Hi, I'm Steve")
-
   }
 
-/*
-  //steve quoter 1000
-  if (msg.content === "=quote") {
-    msg.reply(quotes[Math.floor(Math.random() * quotes.length)])
-  }
-  if (msg.content === "=quotes") {
-    msg.reply(quotes)
-  }
-
-
-  if (msg.content === "=help") {
-    msg.reply("Hi, I'm Steve the bot (not to be confused with Steve the human) and I'm here to moderate this server. If you have any questions, feel free to @Kaz and ask him (he is my developer). If you would like to contrubute, great! I am open source at https://github.com/KazMalhotra/discordbot.")
-  }
-*/
 
 
 })
