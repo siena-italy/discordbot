@@ -6,7 +6,10 @@ client.on("ready", () => {
   console.log(`Logged in as ${client.user.tag}!`)
 })
 
+var points = {
+  "@Kaz": "10"
 
+}
 
 
 function sleep(milliseconds) {
@@ -46,6 +49,11 @@ client.on("message", msg => {
     msg.reply(quotes)
   }
 
+  if (command === "status") {
+    msg.channel.send("Operational")
+
+  }
+
   if (command === ("quote")) {
     msg.reply(quotes[Math.floor(Math.random() * quotes.length)])
   }
@@ -59,13 +67,26 @@ client.on("message", msg => {
     msg.reply("Hi, I'm Steve")
   }
 
+
+  if (command.startsWith("dale")) {
+
+    msg.reply("I don't really know any good Dale quotes.")
+  }
+
+  if (command.startsWith("points")) {
+    if (!args.length) {
+      return msg.channel.send("Please provide arguments", msg.author);
+    }
+    msg.channel.send(`User ${args} has ${points[args]} points`)
+
+  }
+
   if (command === 'args') {
     if (!args.length) {
       return msg.channel.send("Please provide arguments", msg.author);
     }
-    msg.channel.send(args);
+    msg.channel.send(`Command name: ${command}\nArguments: ${args}`);
   }
-
 
 })
 
@@ -84,5 +105,5 @@ client.on("message", msg => {
   }
 })
 
-var key = process.env.API_KEY;
-client.login(key)
+var token = process.env.TOKEN;
+client.login("token")
