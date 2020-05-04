@@ -21,7 +21,7 @@ function sleep(milliseconds) {
 }
 
 
-var quotes = [
+var stevequotes = [
   "Plug in your chromebook -Steven Michael Pape, 2019",
   "If you keep the commons clean, maybe you can eat at assemblies -Steven Michael Pape, 2019",
   "Is that a phone is your pocket? -Steven Michael Pape, 2019",
@@ -31,6 +31,15 @@ var quotes = [
   "I don't make up the rules, I just enforce them -Steven Michael Pape, making up the rules"
 ]
 
+var dalequotes = [
+  "I know you two like each other but you need to focus -Dale rawls",
+  "Thats cooler than cats feet -Dale Rawls",
+  "I will give you each one sheet of italian shading paper. It's very expensive. -Dale Rawls",
+  "Paper is cheap but good ideas are hard to come by. -Dale Rawls"
+]
+
+
+var quotes = [stevequotes, dalequotes]
 
 //commands
 client.on("message", msg => {
@@ -45,8 +54,14 @@ client.on("message", msg => {
 
 
   //steve quoter 2000
-  if (command.startsWith("quotes")) {
-    msg.reply(quotes)
+  if (command === ("quotes")) {
+    msg.channel.send("Steve's quotes:")
+    msg.channel.send(stevequotes)
+    msg.channel.send("Dale's quotes:")
+    msg.channel.send(dalequotes)
+  }
+  if (command === ("quotes-raw")) {
+    msg.channel.send(quotes)
   }
 
   if (command === "status") {
@@ -54,8 +69,12 @@ client.on("message", msg => {
 
   }
 
+  if (command === ("steve")) {
+    msg.reply(stevequotes[Math.floor(Math.random() * stevequotes.length)])
+  }
+
   if (command === ("quote")) {
-    msg.reply(quotes[Math.floor(Math.random() * quotes.length)])
+    msg.channel.send(stevequotes[Math.floor(Math.random() * stevequotes.length)])
   }
 
   if (command.startsWith("help")) {
@@ -68,9 +87,13 @@ client.on("message", msg => {
   }
 
 
-  if (command.startsWith("dale")) {
+  if (command === ("dale")) {
 
-    msg.reply("I don't really know any good Dale quotes.")
+    msg.reply(dalequotes[Math.floor(Math.random() * dalequotes.length)])
+  }
+
+  if (command === ("quotes-dale")) {
+    msg.reply(dalequotes)
   }
 
   if (command.startsWith("points")) {
@@ -99,11 +122,18 @@ client.on("message", msg => {
     msg.reply("citation needed")
     msg.reply("https://imgs.xkcd.com/comics/wikipedian_protester.png")
   }
+/*
+  if (msg.content.startsWith("sowwy")) {
+    sleep(200)
+    msg.reply(`You mean sorry?`)
+  }
+*/
+
   if (msg.content === "!rank") {
     sleep(200)
-    msg.reply("should chill")
+    msg.channel.send(`${msg.author} should chill`)
   }
 })
 
 var token = process.env.TOKEN;
-client.login("token")
+client.login(token)

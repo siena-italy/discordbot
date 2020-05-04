@@ -1,6 +1,6 @@
 # Steve the bot - A discord bot for the CGS 2025 discord server.
 ## Features   
-Says 'citation needed' whenever YAGPDB says anything outragous, tells miles to chill whenever he looks at his !rank, and quotes Steve.
+Says 'citation needed' whenever YAGPDB says anything outragous, tells people looking for their !rank to chill, and quotes Steve and Dale.
 
 ## Contributing   
 If you would like to contribute to the bot, make sure you are somewhat familiar with node.js. This bot uses the discord.js wrapper for the discord api. If you would like to contribute, just send me a pull request!
