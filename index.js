@@ -7,7 +7,7 @@ client.on("ready", () => {
 })
 
 var points = {
-  "@Kaz": "10"
+  "Kaz": "10"
 
 }
 
@@ -28,7 +28,15 @@ var stevequotes = [
   "I'll bring donuts for c&c -Steven Michael Pape, 2019",
   "My name is Dr. Roboto -Steven Michael Pape to some random 6th grader",
   "I wish there was something I could do -Steven Michael Pape when asked to do literally anything",
-  "I don't make up the rules, I just enforce them -Steven Michael Pape, making up the rules"
+  "I don't make up the rules, I just enforce them -Steven Michael Pape, making up the rules",
+  "Please put your chromebooks in the correct slot -Steve Pape, 2019",
+  "Hello, have you plugged in your chromebook? -Steve Pape, 2019",
+  "This is the third time you've left your chromebook out... should we brainstorm a plan to fix that? -Steve Pape, 2019",
+  "Your chromebook is in my office. -Steve Pape, 2019",
+  "Did you plug in your chromebook? -Steve Pape, 2019",
+  "What is that on your other tab? -Steve Pape, 2019",
+  "We have GREAT news! *pauses dramatically*... Everyone's chromebook was plugged in! -Steve Pape, 2020",
+  "Who's Steve? - Steven Michael Pape pretending to be Dr. Roboto to any sixth grader."
 ]
 
 var dalequotes = [
@@ -48,9 +56,6 @@ client.on("message", msg => {
   if (!msg.content.startsWith(prefix) || msg.author.bot) return;
   const args = msg.content.slice(prefix.length).split(' ');
   const command = args.shift().toLowerCase();
-
-//  stop if '=' is not there or if the author of the message is a bot
-//  if (!command.startsWith(prefix) || msg.author.bot) return;
 
 
   //steve quoter 2000
@@ -100,7 +105,7 @@ client.on("message", msg => {
     if (!args.length) {
       return msg.channel.send("Please provide arguments", msg.author);
     }
-    msg.channel.send(`User ${args} has ${points[args]} points`)
+    msg.channel.send(`User ${args[0]} has ${points[args[0]]} points`)
 
   }
 
@@ -109,6 +114,13 @@ client.on("message", msg => {
       return msg.channel.send("Please provide arguments", msg.author);
     }
     msg.channel.send(`Command name: ${command}\nArguments: ${args}`);
+  }
+
+  if (command === 'repeat') {
+    if (!args.length) {
+      return msg.channel.send("Please provide arguments", msg.author);
+    }
+    msg.channel.send(args);
   }
 
 })
@@ -135,5 +147,9 @@ client.on("message", msg => {
   }
 })
 
+
+
+
+//login
 var token = process.env.TOKEN;
 client.login(token)
