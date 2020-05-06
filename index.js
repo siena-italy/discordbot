@@ -118,10 +118,21 @@ client.on("message", msg => {
 
   if (command === 'repeat') {
     if (!args.length) {
-      return msg.channel.send("Please provide arguments", msg.author);
+      msg.channel.send("Please provide arguments", msg.author);
     }
     msg.channel.send(args);
   }
+
+  if (command === 'roll') {
+    if (!args.length) {
+      msg.channel.send(Math.floor(Math.random() * 6 + 1))
+    }
+    else {
+    msg.channel.send(Math.floor(Math.random() * args[0] + 1))
+
+    }
+  }
+
 
 })
 
@@ -141,7 +152,7 @@ client.on("message", msg => {
   }
 */
 
-  if (msg.content === "!rank") {
+  if (msg.content.startsWith("!rank")) {
     sleep(200)
     msg.channel.send(`${msg.author} should chill`)
   }
