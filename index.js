@@ -46,6 +46,13 @@ var dalequotes = [
   "Paper is cheap but good ideas are hard to come by. -Dale Rawls"
 ]
 
+var rankres = [
+  "Stop bragging",
+  "Chill",
+  "https://visicomservices.com/images/easyblog_images/4072/b2ap3_thumbnail_stop_wasting_time_400.jpg",
+  "you dont need to check your rank this frequently, and i'm saying this because i'm steve and i am a nosy bot."
+]
+
 
 var quotes = [stevequotes, dalequotes]
 
@@ -152,9 +159,11 @@ client.on("message", msg => {
   }
 */
 
+
+
   if (msg.content.startsWith("!rank")) {
     sleep(200)
-    msg.channel.send(`${msg.author} should chill`)
+    msg.channel.send(rankres[Math.floor(Math.random() * rankres.length)])
   }
 })
 
