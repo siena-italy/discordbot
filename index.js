@@ -78,6 +78,8 @@ client.on("message", msg => {
 
   if (command === "status") {
     msg.channel.send("Operational")
+    console.log(msg.author)
+    console.log(msg.author.username)
 
   }
 
@@ -90,7 +92,7 @@ client.on("message", msg => {
   }
 
   if (command.startsWith("help")) {
-    msg.reply("Hi, I'm Steve the bot (not to be confused with Steve the human) and I'm here to moderate this server. If you have any questions, feel free to @Kaz and ask him (he is my developer). If you would like to contrubute, great! I am open source at https://github.com/KazMalhotra/discordbot.")
+    msg.reply("Hi, I'm Steve the bot (not to be confused with Steve the human) and I'm here to moderate this server. If you have any questions, feel free to @kaz and ask him (he is my developer). If you would like to contrubute, great! I am open source at https://github.com/KazMalhotra/discordbot.")
   }
 
   if (command.startsWith("lecture")) {
@@ -139,8 +141,6 @@ client.on("message", msg => {
 
     }
   }
-
-
 })
 
 
@@ -158,12 +158,26 @@ client.on("message", msg => {
     msg.reply(`You mean sorry?`)
   }
 */
+/*
+if (msg.author.discriminator == '8035') {
+  msg.channel.send(`Ok Wylly`)
+  console.log(msg.author.username)
+}
 
 
-
+if (msg.author.discriminator == '5749') {
+  msg.channel.send(`Ur short kevin`)
+  console.log(msg.author.username)
+}
+*/
   if (msg.content.startsWith("!rank")) {
     sleep(200)
     msg.channel.send(rankres[Math.floor(Math.random() * rankres.length)])
+  }
+
+  if (msg.author.discriminator == '7364' && msg.content == 'https://discord.gg/64669p'){
+    msg.reply("Stop it isaac")
+
   }
 })
 
