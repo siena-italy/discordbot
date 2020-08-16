@@ -1,14 +1,34 @@
-const Discord = require("discord.js")
-const client = new Discord.Client()
+const Discord = require("discord.js");
+const client = new Discord.Client();
 const prefix = '='
+const got = require('got');
 
 client.on("ready", () => {
   console.log(`Logged in as ${client.user.tag}!`)
+  console.log(`--------------------------------------------`);
+  client.user.setActivity(`👋 🤚 🖐 ✋ 🖖 👌 🤏 ✌️ 🤞 🤟 🤘 🤙 👈 👉 👆 🖕`);
 })
 
-var points = {
-  "Kaz": "10"
 
+// https://github.com/VEEGISHx/Alexi5/blob/master/src/commands/fun/meme.js
+function meme(msg) {
+    const embed = new Discord.MessageEmbed();
+    got('https://www.reddit.com/r/catlinmemes/random/.json').then(response => {
+        let content = JSON.parse(response.body);
+        let permalink = content[0].data.children[0].data.permalink;
+        let memeUrl = `https://reddit.com${permalink}`;
+        let memeImage = content[0].data.children[0].data.url;
+        let memeTitle = content[0].data.children[0].data.title;
+        let memeUpvotes = content[0].data.children[0].data.ups;
+        let memeDownvotes = content[0].data.children[0].data.downs;
+        let memeNumComments = content[0].data.children[0].data.num_comments;
+        embed.addField(`${memeTitle}`, `[View thread](${memeUrl})`);
+        embed.setImage(memeImage);
+        embed.setFooter(`👍 ${memeUpvotes} 👎 ${memeDownvotes} 💬 ${memeNumComments}`);
+        msg.channel.send(embed)
+            .then(sent => console.log(`Sent a reply to ${sent.author.username}`))
+        console.log('Bot responded with: ' + memeImage);
+    }).catch(console.error);
 }
 
 
@@ -141,6 +161,10 @@ client.on("message", msg => {
 
     }
   }
+  if (command == 'meme') {
+    meme(msg);
+  }
+
 })
 
 
@@ -152,33 +176,13 @@ client.on("message", msg => {
     msg.reply("citation needed")
     msg.reply("https://imgs.xkcd.com/comics/wikipedian_protester.png")
   }
-/*
-  if (msg.content.startsWith("sowwy")) {
-    sleep(200)
-    msg.reply(`You mean sorry?`)
-  }
-*/
-/*
-if (msg.author.discriminator == '8035') {
-  msg.channel.send(`Ok Wylly`)
-  console.log(msg.author.username)
-}
 
-
-if (msg.author.discriminator == '5749') {
-  msg.channel.send(`Ur short kevin`)
-  console.log(msg.author.username)
-}
-*/
   if (msg.content.startsWith("!rank")) {
     sleep(200)
     msg.channel.send(rankres[Math.floor(Math.random() * rankres.length)])
   }
 
-  if (msg.author.discriminator == '7364' && msg.content == 'https://discord.gg/64669p'){
-    msg.reply("Stop it isaac")
 
-  }
 })
 
 
