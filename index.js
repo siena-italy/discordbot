@@ -56,7 +56,9 @@ var stevequotes = [
   "Did you plug in your chromebook? -Steve Pape, 2019",
   "What is that on your other tab? -Steve Pape, 2019",
   "We have GREAT news! *pauses dramatically*... Everyone's chromebook was plugged in! -Steve Pape, 2020",
-  "Who's Steve? - Steven Michael Pape pretending to be Dr. Roboto to any sixth grader."
+  "Who's Steve? - Steven Michael Pape pretending to be Dr. Roboto to any sixth grader.",
+  "Beards are cool!",
+  "Come see me in my office - Steven Michael Pape when he has (stolen) your chromebook."
 ]
 
 var dalequotes = [
@@ -110,6 +112,10 @@ client.on("message", msg => {
   if (command === ("quote")) {
     msg.channel.send(stevequotes[Math.floor(Math.random() * stevequotes.length)])
   }
+  
+  if (command === ("commands")) {
+    msg.channel.send("There are like 14 commands, including quote, quotes more quotey stuff, and roll, which rolls a die or something. And there's lecture and help and points I think.")
+  }
 
   if (command.startsWith("help")) {
     msg.reply("Hi, I'm Steve the bot (not to be confused with Steve the human) and I'm here to moderate this server. If you have any questions, feel free to @kaz and ask him (he is my developer). If you would like to contrubute, great! I am open source at https://github.com/KazMalhotra/discordbot.")
@@ -117,7 +123,7 @@ client.on("message", msg => {
 
   if (command.startsWith("lecture")) {
 
-    msg.reply("Hi, I'm Steve")
+    msg.reply("Hi, I'm Steve and I'm here to lecture you ha!")
   }
 
 
