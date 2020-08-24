@@ -198,4 +198,4 @@ client.on("message", msg => {
 
 //login
 var token = process.env.TOKEN;
-client.login("NzA2MjY0OTI1NzcyOTcyMTMy.Xq3ueA.DkPBpXKAch9-xDStCw8_rNszAlk")
+client.login(token)
