@@ -3,10 +3,12 @@ const client = new Discord.Client();
 const prefix = '='
 const got = require('got');
 
+
+
 client.on("ready", () => {
   console.log(`Logged in as ${client.user.tag}!`)
   console.log(`--------------------------------------------`);
-  client.user.setActivity(`👋 🤚 🖐 ✋ 🖖 👌 🤏 ✌️ 🤞 🤟 🤘 🤙 👈 👉 👆 🖕`);
+  client.user.setActivity(`The more you know, the more you realize you know nothing. -Socrates`);
 })
 
 
