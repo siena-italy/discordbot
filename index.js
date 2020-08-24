@@ -57,6 +57,8 @@ var stevequotes = [
   "What is that on your other tab? -Steve Pape, 2019",
   "We have GREAT news! *pauses dramatically*... Everyone's chromebook was plugged in! -Steve Pape, 2020",
   "Who's Steve? - Steven Michael Pape pretending to be Dr. Roboto to any sixth grader."
+  "Come see me in my office. - Steven Michael Pape when he has (stolen) your chromebook."
+  "Beards are cool!"
 ]
 
 var dalequotes = [
