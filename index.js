@@ -114,9 +114,9 @@ client.on("message", msg => {
   if (command === ("quote")) {
     msg.channel.send(stevequotes[Math.floor(Math.random() * stevequotes.length)])
   }
-  
+
   if (command === ("commands")) {
-    msg.channel.send("There are like 14 commands, including quote, quotes more quotey stuff, and roll, which rolls a die or something. And there's lecture and help and points I think.")
+    msg.channel.send("Try commands like 'steve', 'quote', 'lecture', 'dale', 'repeat', 'roll', and 'meme'")
   }
 
   if (command.startsWith("help")) {
@@ -155,7 +155,7 @@ client.on("message", msg => {
 
   if (command === 'repeat') {
     if (!args.length) {
-      msg.channel.send("Please provide arguments", msg.author);
+      msg.channel.send("What should I repeat", msg.author);
     }
     msg.channel.send(args);
   }
@@ -198,4 +198,4 @@ client.on("message", msg => {
 
 //login
 var token = process.env.TOKEN;
-client.login(token)
+client.login("NzA2MjY0OTI1NzcyOTcyMTMy.Xq3ueA.DkPBpXKAch9-xDStCw8_rNszAlk")
