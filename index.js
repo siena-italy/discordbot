@@ -74,7 +74,7 @@ var rankres = [
   "Stop bragging",
   "Chill",
   "https://visicomservices.com/images/easyblog_images/4072/b2ap3_thumbnail_stop_wasting_time_400.jpg",
-  "you dont need to check your rank this frequently, and i'm saying this because i'm steve and i am a nosy bot."
+  "You dont need to check your rank this frequently, and I'm saying this because I'm Steve and I am a nosy bot. A very nosy bot."
 ]
 
 
@@ -116,7 +116,8 @@ client.on("message", msg => {
   }
 
   if (command === ("commands")) {
-    msg.channel.send("Try commands like 'steve', 'quote', 'lecture', 'dale', 'repeat', 'roll', and 'meme'")
+    msg.channel.send("Try commands like 'steve', 'quote', 'lecture', 'dale', 'repeat', 'roll', and 'meme. 
+                     "None of these commands are very interesting yet, so complain to Kaz if you feel unsatisfied.")
   }
 
   if (command.startsWith("help")) {
@@ -125,7 +126,7 @@ client.on("message", msg => {
 
   if (command.startsWith("lecture")) {
 
-    msg.reply("Hi, I'm Steve and I'm here to lecture you ha!")
+    msg.reply("Hi, I'm Steve and I'm here to lecture you ha! There are like three things you must know: 1. Plug your chromebook in. 2. Plug your chromebook. 3. Plug in your chromebook. Alright, the lecture is over. This one was rather short, for your benefit. Please @kaz if you would like a longer lecture.")
   }
 
 
