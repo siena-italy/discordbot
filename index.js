@@ -130,7 +130,7 @@ client.on("message", msg => {
   
   if (command.startsWith("schedule")) {
 
-    msg.reply("This is the schedule link thing: https://drive.google.com/file/d/1J7SuChmGYHM1gmTcf2p7aiBjgyFeeNmN/view.")
+    msg.reply("This is the schedule link thing: https://drive.google.com/file/d/1J7SuChmGYHM1gmTcf2p7aiBjgyFeeNmN/view. You can view your class schedile at https://portals.veracross.com/catlin/student/student/daily-schedule if you are logged in.")
   }
 
   if (command === ("dale")) {
