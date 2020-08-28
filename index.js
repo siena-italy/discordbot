@@ -125,9 +125,13 @@ client.on("message", msg => {
 
   if (command.startsWith("lecture")) {
 
-    msg.reply("Hi, I'm Steve and I'm here to lecture you ha!")
+    msg.reply("Hi, I'm Steve and I'm here to lecture you ha! HAHAHHAA!")
   }
+  
+  if (command.startsWith("schedule")) {
 
+    msg.reply("This is the schedule link thing: https://drive.google.com/file/d/1J7SuChmGYHM1gmTcf2p7aiBjgyFeeNmN/view.")
+  }
 
   if (command === ("dale")) {
 
